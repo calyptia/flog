@@ -37,7 +37,7 @@ func Generate(option *Option) error {
 			start := time.Now()
 			log := ""
 			for i := 0; i < option.Rate; i++ {
-				log = NewLog(option.Format, created, option.Bytes)
+				log = NewLog(option.Format, time.Now(), option.Bytes)
 				_, _ = writer.Write([]byte(log + "\n"))
 				created = created.Add(interval)
 			}
