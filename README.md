@@ -1,19 +1,21 @@
 # Flog
 
-[![go report card](https://goreportcard.com/badge/github.com/mingrammer/flog)](https://goreportcard.com/report/github.com/mingrammer/flog) [![travis ci](https://travis-ci.com/mingrammer/flog.svg?branch=master)](https://travis-ci.com/mingrammer/flog) [![docker download](https://img.shields.io/docker/pulls/mingrammer/flog.svg)](https://hub.docker.com/r/mingrammer/flog)
+[![go report card](https://goreportcard.com/badge/github.com/calyptia/flog)](https://goreportcard.com/report/github.com/calyptia/flog) [![docker download](https://img.shields.io/docker/pulls/calyptia/flog.svg)](https://hub.docker.com/r/calyptia/flog)
 
 flog is a fake log generator for common log formats such as apache-common, apache error and RFC3164 syslog.
 
 It is useful for testing some tasks which require log data like amazon kinesis log stream test.
 
 > Thanks to [gofakeit](https://github.com/brianvoe/gofakeit) 😘
+>
+> And many thanks to [mingrammer](https://github.com/mingrammer/flog) for the original project 😘
 
 ## Installation
 
 ### Using go get
 
 ```bash
-go get -u github.com/mingrammer/flog
+go get -u github.com/calyptia/flog
 ```
 
 It is recommended to also run `dep ensure` to make sure that the dependencies are in the correct versions.
@@ -21,18 +23,18 @@ It is recommended to also run `dep ensure` to make sure that the dependencies ar
 ### Using [homebrew](https://brew.sh)
 
 ```
-brew tap mingrammer/flog
+brew tap calyptia/flog
 brew install flog
 ```
 
 ### Using .tar.gz archive
 
-Download gzip file from [Github Releases](https://github.com/mingrammer/flog/releases/latest) according to your OS. Then, copy the unzipped executable to under system path.
+Download gzip file from [Github Releases](https://github.com/calyptia/flog/releases/latest) according to your OS. Then, copy the unzipped executable to under system path.
 
 ### Using [docker](https://www.docker.com)
 
 ```
-docker run -it --rm mingrammer/flog
+docker run -it --rm calyptia/flog
 ```
 
 ## Usage
