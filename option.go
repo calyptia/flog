@@ -170,7 +170,7 @@ func ParseOptions() *Option {
 	number := pflag.IntP("number", "n", opts.Number, "Number of lines to generate")
 	bytes := pflag.IntP("bytes", "b", opts.Bytes, "Size of log records to generate in bytes (default 512)")
 	sleepString := pflag.StringP("sleep", "s", "0s", "Creation time interval (default unit: seconds)")
-	rate := pflag.IntP("rate", "r", opts.Number, "Logs per second")
+	rate := pflag.IntP("rate", "r", opts.Rate, "Logs per second")
 	splitBy := pflag.IntP("split", "p", opts.SplitBy, "Maximum number of lines or size of a log file")
 	overwrite := pflag.BoolP("overwrite", "w", false, "Overwrite the existing log files")
 	forever := pflag.BoolP("loop", "l", false, "Loop output forever until killed")
