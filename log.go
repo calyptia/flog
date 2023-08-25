@@ -73,7 +73,8 @@ func NewApacheCombinedLog(t time.Time) string {
 
 // NewApacheErrorLog creates a log string with apache error log format
 func NewApacheErrorLog(t time.Time, length int) string {
-	preMsg := fmt.Sprintf(
+	preMsg := "Status : 4 "
+	/* preMsg := fmt.Sprintf(
 		ApacheErrorLog,
 		t.Format(ApacheError),
 		gofakeit.Word(),
@@ -84,6 +85,7 @@ func NewApacheErrorLog(t time.Time, length int) string {
 		gofakeit.Number(1, 65535),
 		gofakeit.HackerPhrase(),
 	)
+	*/
 	return preMsg + message(length-len(preMsg))
 }
 
