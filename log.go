@@ -73,7 +73,7 @@ func NewApacheCombinedLog(t time.Time) string {
 
 // NewApacheErrorLog creates a log string with apache error log format
 func NewApacheErrorLog(t time.Time, length int) string {
-	preMsg := "Status : 4 "
+	preMsg := "Error Block "
 	/* preMsg := fmt.Sprintf(
 		ApacheErrorLog,
 		t.Format(ApacheError),
