@@ -33,18 +33,10 @@ func Generate(option *Option) error {
 
 	if option.Forever {
 		for {
-			writtenBytes := 0
-			start := time.Now()
-			log := ""
-			for i := 0; i < option.Rate; i++ {
-				log = NewLog(option.Format, time.Now(), option.Bytes)
-				_, _ = writer.Write([]byte(log + "\n"))
-				created = created.Add(interval)
-			}
-			elapsed := time.Since(start)
-			time.Sleep(time.Second - elapsed)
-			writtenBytes += len(log) * option.Rate
-			if (option.Type != "stdout") && (option.SplitBy > 0) && (writtenBytes > option.SplitBy) {
+			totalWrittenBytes := 0
+			writtenBytes, _ := generateByRate(option, writer)
+			totalWrittenBytes += writtenBytes
+			if (option.Type != "stdout") && (option.SplitBy > 0) && (totalWrittenBytes > option.SplitBy) {
 				writer.Close()
 				fmt.Printf("File %s is created\n", logFileName)
 				splitCount++
@@ -82,6 +74,21 @@ func Generate(option *Option) error {
 		fmt.Println(logFileName, "is created.")
 	}
 	return nil
+}
+
+func generateByRate(option *Option, writer io.WriteCloser) (int, int) {
+	start := time.Now()
+	generatedBytes := 0
+	generatedRecords := 0
+	for i := 0; i < option.Rate; i++ {
+		log := NewLog(option.Format, time.Now(), option.Bytes) + "\n"
+		_, _ = writer.Write([]byte(log))
+		generatedBytes += len(log)
+		generatedRecords++
+	}
+	elapsed := time.Since(start)
+	time.Sleep(time.Second - elapsed)
+	return generatedBytes, generatedRecords
 }
 
 // NewWriter returns a closeable writer corresponding to given log type
