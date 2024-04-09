@@ -1,4 +1,4 @@
-module github.com/lecaros/flog
+module github.com/chronosphereio/calyptia-flog
 
 go 1.14
 
