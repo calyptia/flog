@@ -1,16 +1,21 @@
 module github.com/chronosphereio/calyptia-flog
 
-go 1.14
+go 1.22
 
 require (
-	bou.ke/monkey v1.0.1
-	github.com/brianvoe/gofakeit v3.18.0+incompatible
-	github.com/davecgh/go-spew v1.1.0 // indirect
-	github.com/logrusorgru/aurora v2.0.3+incompatible // indirect
-	github.com/mattn/go-colorable v0.1.12 // indirect
+	bou.ke/monkey v1.0.2
+	github.com/brianvoe/gofakeit/v6 v6.28.0
 	github.com/mingrammer/cfmt v1.1.0
-	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/spf13/pflag v1.0.5
-	github.com/stretchr/testify v1.2.1
-	golang.org/x/sys v0.1.0 // indirect
+	github.com/stretchr/testify v1.9.0
+)
+
+require (
+	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/logrusorgru/aurora v2.0.3+incompatible // indirect
+	github.com/mattn/go-colorable v0.0.9 // indirect
+	github.com/mattn/go-isatty v0.0.3 // indirect
+	github.com/pmezard/go-difflib v1.0.0 // indirect
+	golang.org/x/sys v0.0.0-20180315095008-cc7307a45468 // indirect
+	gopkg.in/yaml.v3 v3.0.1 // indirect
 )

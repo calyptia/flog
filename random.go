@@ -5,7 +5,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/brianvoe/gofakeit"
+	"github.com/brianvoe/gofakeit/v6"
 )
 
 // RandResourceURI generates a random resource URI
