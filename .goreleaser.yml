@@ -1,7 +1,7 @@
-project_name: flog
+project_name: calyptia-flog
 
 builds:
-  - binary: flog
+  - binary: calyptia-flog
     goos:
       - windows
       - darwin
@@ -27,7 +27,7 @@ archives:
 
 release:
   github:
-    owner: mingrammer
-    name: flog
+    owner: chronosphere
+    name: calyptia-flog
   name_template: '{{.Tag}}'
 
