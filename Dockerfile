@@ -9,8 +9,8 @@ COPY go.mod go.sum ./
 RUN go mod download
 
 COPY . ./
-RUN go build -o /bin/flog
+RUN go build -o /bin/calyptia-flog
 
 FROM scratch
-COPY --from=0 /bin/flog /bin/flog
+COPY --from=0 /bin/calyptia-flog /bin/calyptia-flog
 ENTRYPOINT ["flog"]

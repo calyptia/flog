@@ -3,7 +3,7 @@
 .vscode
 .gitignore
 .dockerignore
-.goreleaser.yml
+calyptia-flog
 .travis.yml
 *.md
 dist
