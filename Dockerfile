@@ -13,4 +13,4 @@ RUN go build -o /bin/calyptia-flog
 
 FROM scratch
 COPY --from=0 /bin/calyptia-flog /bin/calyptia-flog
-ENTRYPOINT ["flog"]
+ENTRYPOINT ["calyptia-flog"]
